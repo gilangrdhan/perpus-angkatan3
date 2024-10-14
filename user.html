@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Accounts Library</title>
+    <link rel="stylesheet" href="assets/dist/css/bootstrap.min.css" />
+    <!-- Include Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- <?php
+        require_once "inc/header.php";
+        ?> -->
+
+      <!-- Navbar -->
+      <div class="menu border-bottom border-dark border-2">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="index.php"
+                    >Dashboard</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="user.html">Manage Accounts</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="manage_book.php">Manage Books</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- EndofNavbar -->
+
+      <div class="mt-5 container">
+        <fieldset class="border p-3 border-black border-2">
+          <legend class="float-none w-auto px-3">Data User</legend>
+          <div class="button-action">
+            <div class="btn btn-primary">Add</div>
+            <div class="btn btn-warning">Recycle</div>
+          </div>
+
+          <div class="table-responsive mt-3">
+            <table class="table table-bordered table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Level</th>
+                  <th>Nama</th>
+                  <th>Email</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1.</td>
+                  <td>Admin</td>
+                  <td>Admin</td>
+                  <td>admil@gmail.com</td>
+                  <td>
+                   <i class="bi bi-trash"></i> | <i class="bi bi-pencil"></i> </i>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </fieldset>
+      </div>
+
+
+      <!-- <?php
+        require_once "inc/footer.php";
+        ?> -->
+
+      <footer
+        class="text-center border-top border-dark border-2 fixed-bottom p-3"
+      >
+        Copyright &copy; 2024 PPKD - Jakarta Pusat.
+      </footer>
+    </div>
+  </body>
+</html>
