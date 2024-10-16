@@ -18,6 +18,9 @@ $rowEdit = mysqli_fetch_assoc($editUser);
 if (isset($_POST['edit'])) {
     $nama = $_POST['nama'];
     $email = $_POST['email'];
+    $password = sha1($_POST['password']);
+    $jenis_kelamin = $_POST['jenis_kelamin'];
+    $telepon = $_POST['telepon'];
 
     if ($_POST['password']) {
         $password = sha1($_POST['password']);
@@ -28,7 +31,7 @@ if (isset($_POST['edit'])) {
     $jenis_kelamin = $_POST['jenis_kelamin'];
     $telepon = $_POST['telepon'];
 
-    $update = mysqli_query($koneksi, "UPDATE user SET nama='$nama', telepon='$telepon' WHERE id='$id'");
+    $update = mysqli_query($koneksi, "UPDATE user SET nama='$nama', email = '$email', password='$password', jenis_kelamin =$jenis_kelamin, telepon =$telepon WHERE id='$id'");
     header("location:?pg=user&ubah=berhasil");
 }
 

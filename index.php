@@ -1,7 +1,13 @@
 <?php include 'koneksi.php';
 
 session_start();
-include 'koneksi.php';
+if (empty($_SESSION['NAMA'])) {
+    header("location:login.php?access=failed");
+    exit(); 
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +55,8 @@ include 'koneksi.php';
     require_once "inc/footer.php";
     ?>
   </div>
+
+  <script src="app.js"></script>
 </body>
 
 </html>

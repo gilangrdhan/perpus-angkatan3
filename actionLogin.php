@@ -17,5 +17,3 @@ if (mysqli_num_rows($queryLogin) > 0) {
 } else {
     header("location:login.php?error=login");
 }
-
-?>

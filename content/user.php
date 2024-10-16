@@ -10,10 +10,7 @@ $user = mysqli_query($koneksi, "SELECT * FROM user ORDER BY id DESC");
             <a href="?pg=tambah-user" class="btn btn-primary">Tambah</a>
 
         </div>
-        <div class="button-action">
-            <div class="btn btn-primary">Add</div>
-            <div class="btn btn-warning">Recycle</div>
-        </div>
+
 
         <div class="table-responsive mt-3">
             <table class="table table-bordered table-striped table-hover">
