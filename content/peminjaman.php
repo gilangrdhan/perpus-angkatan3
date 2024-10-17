@@ -31,11 +31,11 @@ $query = mysqli_query($koneksi, "SELECT anggota.nama_anggota, peminjaman.* FROM 
                         <tr>
                             <td><?php echo $no++ ?></td>
                             <td><?php echo $row['nama_anggota'] ?></td>
-                            <td><?php echo $row['nama_peminjaman'] ?></td>
+                            <td><?php echo $row['no_peminjaman'] ?></td>
                             <td><?php echo $row['tgl_peminjaman'] ?></td>
                             <td><?php echo $row['tgl_pengembalian'] ?></td>
                             <td><?php echo $row['status'] ?></td>
-                            <td><a href="?pg=tambah-peminjaman&edit=<?php echo $row['id'] ?>=" class=" btn btn-success btn-sm">Edit</a>
+                            <td><a href="?pg=tambah-peminjaman&detail=<?php echo $row['id'] ?>=" class=" btn btn-success btn-sm">Detail</a>
                                 <a href="?pg=tambah-peminjaman&delete=<?php echo $row['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin akan menghapus data ini??')">Delete</a>
                             </td>
                         </tr>
