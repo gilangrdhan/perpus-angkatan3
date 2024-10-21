@@ -2,8 +2,8 @@
 
 session_start();
 if (empty($_SESSION['NAMA'])) {
-    header("location:login.php?access=failed");
-    exit(); 
+  header("location:login.php?access=failed");
+  exit();
 }
 
 
@@ -56,7 +56,52 @@ if (empty($_SESSION['NAMA'])) {
     ?>
   </div>
 
+  <script src="assets/dist/js/jquery-3.7.1.min.js"></script>
+  <script src="assets/dist/js/moment.js"></script>
   <script src="app.js"></script>
+
+  <script>
+    $("#id_peminjaman").change(function() {
+      let no_peminjaman = $(this).find('option:selected').val();
+      console.log(no_peminjaman);
+      let tbody = $('tbody'),
+        newRow = "";
+      $.ajax({
+        url: "ajax/getPeminjam.php?no_peminjaman=" + no_peminjaman,
+        type: "get",
+        dataType: "json",
+        success: function(res) {
+          $('#no_pinjam').val(res.data.no_peminjaman);
+          $('#tgl_peminjaman').val(res.data.tgl_peminjaman);
+          $('#tgl_pengembalian').val(res.data.tgl_pengembalian);
+          $('#nama_anggota').val(res.data.nama_anggota);
+
+          let tanggal_kembali = new moment(res.data.tgl_pengembalian);
+          let currentDate = new Date().toJSON().slice(0, 10);
+          console.log(currentDate);
+          let tanggal_di_kembalikan = new moment(currentDate);
+          let selisih = tanggal_di_kembalikan.diff(tanggal_kembali, "days");
+          if (selisih <0) {
+            selisih = 0;
+          }
+
+          let biaya_denda = 10000;
+          let totalDenda = selisih * biaya_denda;
+          $('#denda').val(totalDenda);
+
+          // console.log(res)
+          $.each(res.detail_peminjaman, function(key, val) {
+            newRow += "<tr>";
+            newRow += "<td>" + val.nama_buku + "</td>";
+            newRow += "</tr>";
+          });
+
+          tbody.html(newRow);
+        }
+      });
+    });
+  </script>
+
 </body>
 
 </html>

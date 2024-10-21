@@ -23,6 +23,9 @@
                             <a class="nav-link" href="?pg=peminjaman">Peminjaman</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="?pg=pengembalian">Pengembalian</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="?pg=anggota">Anggota</a>
                         </li>
                     </ul>
