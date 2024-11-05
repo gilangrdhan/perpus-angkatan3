@@ -1,3 +1,22 @@
+<?php
+include 'koneksi.php';
+// jika button daftar dim klik atau ditekan
+if (isset($_POST['daftar'])){
+    $email          = $_POST['email'];
+    $password       = $_POST['password'];
+    $nama_lengkap   = $_POST['nama_lengkap'];
+    $nama_pengguna  = $_POST['nama_pengguna'];
+
+    // masukkan data ke dalam tabel user kolom kolom tabel user () dan nilainya diambil dari inputan sesuai dengan urutan kolomnya
+    mysqli_query($koneksi, "INSERT INTO user (email, password, nama_lengkap, nama_pengguna) VALUES ('$email', '$password' , '$nama_lengkap', '$nama_pengguna')");
+
+    // melempar ke halaman login
+    header("location:login.php?register=berhasil");
+
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,13 +35,9 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title text-center">
-                                <h5>Welcome to Social Media X </h5>
-                                <p>Please login with your account!</p>
+                                <h5>Medsos X - Muhammad Gilang Ramadhan </h5>
                             </div>
-                            <?php if (isset($_GET['register'])): ?>
-                                <div class="alert alert-success">Registrasi pengguna berhasil</div>
-                            <?php endif ?>
-                            <form action="actionLogin.php" method="POST">
+                            <form action="" method="POST">
                                 <div class="form-group mb-3">
                                     <label for="" class="form-label">
                                         Email
@@ -36,9 +51,20 @@
                                     <input type="password" class="form-control" name="password"
                                         placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;">
                                 </div>
+                                    <label for="" class="form-label">
+                                        Nama Lengkap
+                                    </label>
+                                    <input type="text" class="form-control" name="nama_lengkap" placeholder="Masukkan nama lengkap anda">            
+                                <div class="form-group mb-3">
+                                    <label for="" class="form-label">
+                                        Nama Pengguna
+                                    </label>
+                                    <input type="text" class="form-control" name="nama_pengguna" placeholder="Masukkan nama pengguna">
+                                </div>
                                 <div class="form-group mb-3">
                                     <div class="d-grid mb-3">
-                                        <button class="btn btn-primary" type="submit">Login</button>
+                                        <button class="btn btn-primary" name="daftar" type="submit">Daftar</button>
+                                        <div class="form-group mb-3">
                                     </div>
                                 </div>
                             </form>
@@ -47,7 +73,7 @@
                     </div>
                     <div class="card mt-3">
                         <div class="card-body">
-                            <p>Sudah punya akun?<a href="register.php" class="text-secondary">Buat Akun</a></p>
+                            <p>Sudah punya akun?<a href="register.php" class="text-secondary">Daftar</a></p>
                         </div>
                     </div>
                 </div>

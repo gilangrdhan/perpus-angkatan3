@@ -8,26 +8,12 @@
                             <a class="nav-link" aria-current="page" href="index.php">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="?pg=user">Manage Accounts</a>
+                            <a class="nav-link" aria-current="page" href="index.php">Beranda</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="?pg=kategori">Kategori</a>
+                            <a class="nav-link" href="?pg=profil">Profil</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="?pg=buku">Buku</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="?pg=level">Level</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="?pg=peminjaman">Peminjaman</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="?pg=pengembalian">Pengembalian</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="?pg=anggota">Anggota</a>
-                        </li>
+                        
                     </ul>
                 </div>
                 <div class="div ">
